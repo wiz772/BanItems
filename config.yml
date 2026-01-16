@@ -1,0 +1,17 @@
+
+# ===================
+#
+# Banned items list
+#
+# ===================
+# 
+# ---- EXEMPLE COMPLET ----
+#
+# banned_items:
+#   - BEDROCK
+#   - CAKE
+#   - WATER_BUCKET
+
+
+banned_items:
+  - BEDROCK
