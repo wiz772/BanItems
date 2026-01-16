@@ -1,0 +1,16 @@
+# Eclipse
+.metadata/
+.settings/
+.project
+
+# Build
+bin/
+build/
+target/
+
+# JAR
+*.jar
+
+# IDE / Misc
+*.iml
+.vscode/
