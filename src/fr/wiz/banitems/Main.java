@@ -2,6 +2,7 @@ package fr.wiz.banitems;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import fr.wiz.banitems.commands.BanItemsCommand;
 import fr.wiz.banitems.events.DetectionEvents;
 import fr.wiz.banitems.utils.ConfigManager;
 
@@ -35,7 +36,7 @@ public class Main extends JavaPlugin {
 	}
 	
 	private void registerCommands() {
-		
+		getCommand("banitems").setExecutor(new BanItemsCommand());
 	}
 
 	private void registerEvents() {

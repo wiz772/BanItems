@@ -11,15 +11,20 @@ public class ConfigManager {
 
     private static List<Material> bannedItemsCache = new ArrayList<>();
 
-    public static void reloadConfig() {
+    public static boolean reloadConfig() {
         try {
             Main.getInstance().reloadConfig();
-            loadBannedItems(); 
+            loadBannedItems();
             Main.getInstance().getLogger().info("Configuration reloaded!");
-        } catch(Exception e) {
-            Main.getInstance().getLogger().severe("Configuration reload failed! Error: " + e.getMessage());
+            return true;
+        } catch (Exception e) {
+            Main.getInstance().getLogger().severe(
+                "Configuration reload failed! Error: " + e.getMessage()
+            );
+            return false;
         }
     }
+
 
     public static void saveConfig() {
         try {
