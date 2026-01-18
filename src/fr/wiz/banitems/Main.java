@@ -34,7 +34,7 @@ public class Main extends JavaPlugin {
 		saveDefaultConfig();
 		ConfigManager.loadBannedItems();
 	}
-	
+
 	private void registerCommands() {
 		getCommand("banitems").setExecutor(new BanItemsCommand());
 	}

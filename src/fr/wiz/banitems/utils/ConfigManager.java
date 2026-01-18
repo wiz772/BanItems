@@ -1,9 +1,16 @@
 package fr.wiz.banitems.utils;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Material;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 import fr.wiz.banitems.Main;
 
@@ -34,6 +41,7 @@ public class ConfigManager {
             Main.getInstance().getLogger().severe("Configuration save failed! Error: " + e.getMessage());
         }
     }
+    
     
     public static String getRemovalMessage() {
         return Main.getInstance().getConfig()

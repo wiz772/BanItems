@@ -18,4 +18,4 @@ banned_items:
 # Message envoyé à un joueur lorsqu'un objet est retiré de son inventaire
 # %item% représente le nom de l'objet
 messages:
-  removal: "§8[§c✖§8] §cObjet interdit détecté §8» §f%item% §7a été §csupprimé §7de ton inventaire."
+  removal: "§c%item% a été enlevé de ton inventaire"

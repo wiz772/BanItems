@@ -2,6 +2,7 @@ name: BanItems
 author: wiz
 version: 1.0
 main: fr.wiz.banitems.Main
+
 commands:
   banitems:
     description: Reload BanItems configuration
@@ -10,4 +11,4 @@ permissions:
   banitems.reload:
     default: op
   banitems.bypass:
-	default: op
+    default: op
