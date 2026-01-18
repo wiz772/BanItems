@@ -17,10 +17,11 @@ Dès qu’un item interdit est détecté dans l’inventaire d’un joueur, il e
 
 ## 📥 Installation
 
-1. Place le fichier `.jar` dans le dossier `plugins/`
-2. Démarre ton serveur
-3. Modifie le fichier `config.yml`
-4. Recharge ou redémarre le serveur
+1. Télécharge le fichier `BanItems.jar` depuis la section **Releases** du GitHub
+2. Place le fichier `.jar` dans le dossier `plugins/` de ton serveur
+3. Démarre ou redémarre ton serveur
+4. Modifie le fichier `config.yml` pour bannir les items souhaités
+5. Recharge le plugin avec `/banitems reload` ou redémarre le serveur
 
 ---
 
