@@ -32,4 +32,8 @@ Dès qu’un item interdit est détecté dans l’inventaire d’un joueur, il e
 | `banitems.reload` | Permet de recharger la config |
 | `banitems.bypass` | Permet de bypass le plugin |
 
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> b7b4c2ec9c25e8e9f7cb4289ebeda620d4e05d35
