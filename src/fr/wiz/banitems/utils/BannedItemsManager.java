@@ -2,6 +2,7 @@ package fr.wiz.banitems.utils;
 
 import java.util.List;
 
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -22,6 +23,9 @@ public class BannedItemsManager {
     
     public static boolean handleBannedItem(Player player, ItemStack item) {
         if (item == null || item.getType() == Material.AIR) return false;
+        
+        if (player.isOp() || player.getGameMode() != GameMode.SURVIVAL) return false;
+
         
         if (BannedItemsManager.isBanned(item)) {
         	sendRemovalMessage(player, item);
