@@ -9,3 +9,5 @@ commands:
 permissions:
   banitems.reload:
     default: op
+  banitems.bypass:
+	default: op

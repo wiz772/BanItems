@@ -9,8 +9,6 @@ import org.bukkit.inventory.ItemStack;
 
 public class BannedItemsManager {
 	
-    private static final String REMOVAL_MESSAGE = "§c%item% has been removed from your inventory!";
-
     public static List<Material> getBannedItems() {
         return ConfigManager.getBannedItemsCache();
     }
@@ -24,7 +22,7 @@ public class BannedItemsManager {
     public static boolean handleBannedItem(Player player, ItemStack item) {
         if (item == null || item.getType() == Material.AIR) return false;
         
-        if (player.isOp() || player.getGameMode() != GameMode.SURVIVAL) return false;
+        if (player.isOp() || player.getGameMode() != GameMode.SURVIVAL || player.hasPermission("banitems.bypass")) return false;
 
         
         if (BannedItemsManager.isBanned(item)) {
@@ -46,7 +44,8 @@ public class BannedItemsManager {
             name = item.getType().name();
         }
 
-        player.sendMessage(REMOVAL_MESSAGE.replace("%item%", name));
+        String msg = ConfigManager.getRemovalMessage().replace("%item%", name);
+        player.sendMessage(msg);
     }
 
     

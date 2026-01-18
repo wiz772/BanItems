@@ -3,6 +3,8 @@ package fr.wiz.banitems.events;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
@@ -111,6 +113,27 @@ public class DetectionEvents implements Listener {
         ItemStack newItem = player.getInventory().getItem(e.getNewSlot());
         if (BannedItemsManager.handleBannedItem(player, newItem)) {
             player.getInventory().setItem(e.getNewSlot(), null);
+        }
+    }
+    
+    @EventHandler
+    public void onEntityDeath(EntityDeathEvent e) {
+        if (e.getEntity().getKiller() == null) return;
+        Player joueur = e.getEntity().getKiller();
+        for (ItemStack loot : e.getDrops()) {
+            if (BannedItemsManager.handleBannedItem(joueur, loot)) {
+                e.getDrops().remove(loot);
+            }
+        }
+    }
+    
+    @EventHandler
+    public void onBlockBreak(BlockBreakEvent e) {
+        Player joueur = e.getPlayer();
+        for (ItemStack drop : e.getBlock().getDrops()) {
+            if (BannedItemsManager.handleBannedItem(joueur, drop)) {
+                drop.setAmount(0);
+            }
         }
     }
 

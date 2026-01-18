@@ -34,6 +34,11 @@ public class ConfigManager {
             Main.getInstance().getLogger().severe("Configuration save failed! Error: " + e.getMessage());
         }
     }
+    
+    public static String getRemovalMessage() {
+        return Main.getInstance().getConfig()
+                .getString("messages.removal", "§c%item% has been removed from your inventory!");
+    }
 
     public static void loadBannedItems() {
         bannedItemsCache.clear();

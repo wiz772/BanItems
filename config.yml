@@ -1,17 +1,21 @@
-
-# ===================
 #
-# Banned items list
+# PERMISSIONS : 
+# - banitems.reload | permet à un joueur de recharger le fichier de configuration depuis le jeu
+# - banitems.bypass | permet à un joueur de contourner la détection/suppression d'objets
 #
-# ===================
-# 
-# ---- EXEMPLE COMPLET ----
+# -------------------
+#
+# ---- banned_items EXEMPLE COMPLET ----
 #
 # banned_items:
 #   - BEDROCK
-#   - CAKE
-#   - WATER_BUCKET
-
+#   - GÂTEAU
+#   - SEAU_D_EAU
 
 banned_items:
   - BEDROCK
+
+# Message envoyé à un joueur lorsqu'un objet est retiré de son inventaire
+# %item% représente le nom de l'objet
+messages:
+  removal: "§8[§c✖§8] §cObjet interdit détecté §8» §f%item% §7a été §csupprimé §7de ton inventaire."
